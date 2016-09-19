@@ -75,11 +75,6 @@ module Fix
     ],
   }
 
-=begin
-<p><b>ruby\ruby.h</b>: VALUE rb_funcall(VALUE self, ID id, int argc, ...);	オブジェクトselfのメソッドidを呼び出します。argcは引数の数を指定します。: VALUE rb_funcall2(VALUE self, ID id, int argc, const VALUE* argv);	オブジェクトselfのメソッドidを呼び出します。argcは引数の数を指定します。引数は配列として与えます。: VALUE rb_funcall3(VALUE self, ID id, int argc, const VALUE* argv);	オブジェクトselfのpublicメソッドidを呼び出します。argcは引数の数を指定します。引数は配列として与えます。</p>
-=end
-
-
   def self.fix(src_dir, dst_dir = nil)
     dst_dir ||= src_dir
     FIX_DATA.each do |filename, data|
