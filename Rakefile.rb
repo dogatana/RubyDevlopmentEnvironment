@@ -1,4 +1,4 @@
-require 'fix'
+require './fix'
 
 EPUB_MASTER = 'Ruby環境構築講座Windows編-1.0.1.epub'
 
