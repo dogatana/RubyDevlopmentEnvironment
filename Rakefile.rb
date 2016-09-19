@@ -6,16 +6,15 @@ task :default => 'book.mobi'
 
 desc 'create mobi file'
 file 'book.mobi' => :fix do
-  # sh 'kindlegen OEBPS/book.opf'
+  sh 'kindlegen OEBPS/book.opf'
 end
 
 desc 'fix type and others'
 task :fix => 'OEBPS' do
   Fix.fix('OEBPS')
-  # Fix.fix('OEBPS', 'OEBPS.patch')
 end
 
 desc 'extract OEBPS directory'
 file 'OEBPS' => EPUB_MASTER do
-  sh "7z x #{file} OEBPS"
+  sh "7z x #{EPUB_MASTER} OEBPS"
 end
